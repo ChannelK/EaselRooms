@@ -1,0 +1,23 @@
+{
+  "name": "easel-rooms",
+  "version": "0.0.1",
+  "description": "A sample Node.js app using EaselJS to do character movement in rooms",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@createjs/easeljs": "^2.0.0-beta.4"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "keywords": [
+    "node",
+    "createjs",
+    "easeljs"
+  ],
+  "author": "Kennith Chan",
+  "contributors": [],
+  "license": "MIT"
+}
