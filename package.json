@@ -1,23 +1,37 @@
 {
   "name": "easel-rooms",
-  "version": "0.0.1",
-  "description": "A sample Node.js app using EaselJS to do character movement in rooms",
+  "version": "1.0.0",
+  "description": "EaselJS demo with dungeon rooms",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
+  },
   "scripts": {
-    "start": "node index.js"
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "start": "http-server"
   },
-  "dependencies": {
-    "@createjs/easeljs": "^2.0.0-beta.4"
-  },
-  "engines": {
-    "node": "4.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChannelK/EaselRooms.git"
   },
   "keywords": [
-    "node",
     "createjs",
     "easeljs"
   ],
   "author": "Kennith Chan",
-  "contributors": [],
-  "license": "MIT"
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ChannelK/EaselRooms/issues"
+  },
+  "homepage": "https://github.com/ChannelK/EaselRooms#readme"
 }
