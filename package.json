@@ -8,6 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.4",
@@ -18,6 +19,7 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
+    "babel": "npx babel src --out-dir lib",
     "start": "http-server"
   },
   "repository": {

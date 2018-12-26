@@ -1,6 +1,6 @@
 /*
 */
-import runGame from "./src/Game";
+import runGame from "./Game";
 
 function init() {
     console.log("init()");
@@ -9,5 +9,3 @@ function init() {
 
 console.log("Running init");
 init();
-
-export default init;

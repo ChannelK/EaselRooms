@@ -11,11 +11,17 @@ class GameContext {
         createjs.Ticker.addEventListener("tick", this.handleTick);
     }
 
-    handleTick() {
+    tick(event) {
         for(var i = 0; i < this.tickList.length; i++) {
-            this.tickList[i].handleTick();
+            this.tickList[i].handleTick(event);
         }
         this.stage.update();
+    }
+
+    teardown(args) {
+        this.stage.removeAllEventListeners();
+        this.stage.removeAllChildren();
+        createjs.Ticker.removeAllEventListeners();
     }
 }
 

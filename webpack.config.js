@@ -2,8 +2,8 @@ var webpack = require("webpack");
 var path = require('path');
 
 module.exports = {
-    entry: "./index.js",
-    mode: "production",
+    entry: "./src/index.js",
+    mode: "development",
     watch: true,
     output: {
         path: path.resolve(__dirname, 'build'),
