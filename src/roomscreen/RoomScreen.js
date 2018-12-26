@@ -25,15 +25,25 @@ class RoomScreen extends GameContext {
         this.rightText.x = 10
         this.rightText.y = 85
         this.rightText.visible = true;
+
+        this.ctrlCombos = [
+            [Controls.UP,this.upText],
+            [Controls.DOWN,this.downText],
+            [Controls.LEFT,this.leftText],
+            [Controls.RIGHT,this.rightText]
+        ];
     }
 
     handleTick(event) {
         let ctrlState = this.gameCore.getNextControl();
-        if(ctrlState[Controls.UP] & (ControlStates.ISDOWN | ControlStates.RISE)) {
-            this.upText.visible = true;
-        } else {
-            //console.log("UP INVISIBLE");
-            this.upText.visible = false;
+        for(let i = 0; i < this.ctrlCombos.length;i++) {
+            let ctrl = this.ctrlCombos[i][0];
+            let textObj = this.ctrlCombos[i][1];
+            if(ctrlState[ctrl] & (ControlStates.ISDOWN | ControlStates.RISE)) {
+                textObj.visible = true;
+            } else {
+                textObj.visible = false;
+            }
         }
         this.stage.update();
     }
@@ -47,6 +57,7 @@ class RoomScreen extends GameContext {
         this.stage.addChild(this.rightText);
         this.tickList = [this];
         this.stage.update();
+        //directly add this class's tick handler instead of using the superclass handler
         createjs.Ticker.addEventListener("tick",this.handleTick.bind(this));
     }
 }
