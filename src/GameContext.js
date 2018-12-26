@@ -1,7 +1,7 @@
 class GameContext {
-    constructor(controller) {
-        this.controller = controller;
-        this.stage = controller.stage;
+    constructor(gameCore) {
+        this.gameCore = gameCore;
+        this.stage = gameCore.stage;
         //these will be built upon setup by a child class
         this.tickList = [];
     }

@@ -6,11 +6,11 @@ import ControlsHandler from "./ControlsHandler";
 function runGame() {
     console.log("runGame()");
     var canvas = document.getElementById("demoCanvas");
-    var gameController = new GameController(canvas);
-    gameController.switchContext("titlescreen",null);
+    var gameCore = new GameCore(canvas);
+    gameCore.switchContext("titlescreen",null);
 }
 
-class GameController {
+class GameCore {
     constructor(canvas) {
         this.stage = new createjs.Stage(canvas);
         this.currentContext = null;

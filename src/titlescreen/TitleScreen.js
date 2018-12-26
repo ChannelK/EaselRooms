@@ -19,7 +19,7 @@ class TitleScreen extends GameContext {
         this.buttonBg.addEventListener("click",(event) =>
             {
                 console.log("Clicked at "+event.stageX+","+event.stageY);
-                this.controller.switchContext("roomscreen");
+                this.gameCore.switchContext("roomscreen");
             });
 
         this.buttonText = new createjs.Text("GO", "40px Arial", "#3010FF");

@@ -27,14 +27,14 @@ class RoomScreen extends GameContext {
     }
 
     handleTick(event) {
-        let ctrlState = this.controller.getNextControl();
-        if(ctrlState[this.controller.controls.CTRL_UP] & this.controller.controls.STATE_ISDOWN) {
+        let ctrlState = this.gameCore.getNextControl();
+        if(ctrlState[this.gameCore.controls.CTRL_UP] & this.gameCore.controls.STATE_ISDOWN) {
             this.upText.visible = true;
         } else {
             //console.log("UP INVISIBLE");
             this.upText.visible = false;
         }
-        this.controller.stage.update();
+        this.stage.update();
     }
 
     setup(args) {
