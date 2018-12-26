@@ -1,5 +1,6 @@
 import "createjs";
 import GameContext from "../GameContext";
+import {KeyCodes,Controls,ControlStates,ControlsHandler} from "../ControlsHandler";
 
 class RoomScreen extends GameContext {
     constructor(controller) {
@@ -28,7 +29,7 @@ class RoomScreen extends GameContext {
 
     handleTick(event) {
         let ctrlState = this.gameCore.getNextControl();
-        if(ctrlState[this.gameCore.controls.CTRL_UP] & this.gameCore.controls.STATE_ISDOWN) {
+        if(ctrlState[Controls.UP] & (ControlStates.ISDOWN | ControlStates.RISE)) {
             this.upText.visible = true;
         } else {
             //console.log("UP INVISIBLE");

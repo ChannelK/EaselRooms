@@ -1,40 +1,46 @@
+//constants for receiving keyboard controls
+var KeyCodes = {
+    UP:    38,
+	DOWN:  40,
+	LEFT:  37,
+	RIGHT: 39,
+	W:     87,
+    A:     65,
+    S:     83,
+    D:     68,
+    COMMA: 188,
+    PERIOD:190,
+    Z:     90,
+    X:     88,
+    ESC:   27,
+    SHIFT: 16
+};
+
+//constants for accessing the control buffer     
+var Controls = {
+    UP:    0,
+    DOWN:  1,
+    LEFT:  2,
+    RIGHT: 3,
+    ACTION:4,
+    ALT:   5,
+    MENU:  6,
+    JACKIN:7,
+    HELP:  8,
+    bufferSize: 9
+};
+
+var ControlStates = {
+    ISDOWN:0x01,
+    RISE:  0x02,
+    FALL:  0x04
+};
+
 class ControlsHandler {
     constructor() {
-        //constants for receiving keyboard controls
-        this.KEYCODE_UP = 38;
-	    this.KEYCODE_DOWN = 40;
-	    this.KEYCODE_LEFT = 37;
-	    this.KEYCODE_RIGHT = 39;
-	    this.KEYCODE_W = 87;
-        this.KEYCODE_A = 65;
-        this.KEYCODE_S = 83;
-        this.KEYCODE_D = 68;
-        this.KEYCODE_COMMA = 188;
-        this.KEYCODE_PERIOD = 190;
-        this.KEYCODE_Z = 90;
-        this.KEYCODE_X = 88;
-        this.KEYCODE_ESC = 27;
-        this.KEYCODE_SHIFT = 16;
-
-        //constants for accessing the control buffer
-        this.CTRL_UP = 0;
-        this.CTRL_DOWN = 1;
-        this.CTRL_LEFT = 2;
-        this.CTRL_RIGHT = 3;
-        this.CTRL_ACTION = 4;
-        this.CTRL_ALT = 5;
-        this.CTRL_MENU = 6;
-        this.CTRL_JACKIN = 7;
-        this.CTRL_HELP = 8;
-        this.ctrlList = [this.CTRL_UP,this.CTRL_DOWN,this.CTRL_LEFT,this.CTRL_RIGHT,
-            this.CTRL_ACTION,this.CTRL_ALT,this.CTRL_MENU,this.CTRL_JACKIN,this.CTRL_HELP];
-
-        this.STATE_ISDOWN = 0x01;
-        this.STATE_RISE = 0x02;
-        this.STATE_FALL = 0x04;
         //state is in bit 0, changes are in bit 1 and 2
-        this.ctrlState = new Array(this.ctrlList.length).fill(0);
-        this.outputBuffer = new Array(this.ctrlList.length);
+        this.ctrlState = new Array(Controls.bufferSize).fill(0);
+        this.outputBuffer = new Array(Controls.bufferSize);
     }
 
     handleKey(isDown,e) {
@@ -47,51 +53,51 @@ class ControlsHandler {
         }
         var updated = null;
 		switch (e.keyCode) {
-            case this.KEYCODE_W:
-			case this.KEYCODE_UP:
-                updated = this.CTRL_UP;
+            case KeyCodes.W:
+			case KeyCodes.UP:
+                updated = Controls.UP;
 				break;
-            case this.KEYCODE_A:
-			case this.KEYCODE_LEFT:
-                updated = this.CTRL_LEFT;
+            case KeyCodes.A:
+			case KeyCodes.LEFT:
+                updated = Controls.LEFT;
 				break;
-            case this.KEYCODE_S:
-            case this.KEYCODE_DOWN:
-                updated = this.CTRL_DOWN;
+            case KeyCodes.S:
+            case KeyCodes.DOWN:
+                updated = Controls.DOWN;
                 break;
-			case this.KEYCODE_D:
-			case this.KEYCODE_RIGHT:
-                updated = this.CTRL_RIGHT;
+			case KeyCodes.D:
+			case KeyCodes.RIGHT:
+                updated = Controls.RIGHT;
                 break;
-            case this.KEYCODE_X:
-			case this.KEYCODE_PERIOD:
-                updated = this.CTRL_ACTION;
+            case KeyCodes.X:
+			case KeyCodes.PERIOD:
+                updated = Controls.ACTION;
                 break;
-            case this.KEYCODE_Z:
-			case this.KEYCODE_COMMA:
-                updated = this.CTRL_ALT;
+            case KeyCodes.Z:
+			case KeyCodes.COMMA:
+                updated = Controls.ALT;
                 break;
             default:
             return false;
         }
         //console.log("Updated "+updated+", prevState: "+this.ctrlState[updated].toString(2));
         //set the fall/rise states
-        if((this.ctrlState[updated] & this.STATE_ISDOWN) == 0) {
+        if((this.ctrlState[updated] & ControlStates.ISDOWN) == 0) {
             //if was up but now is down
             if(isDown) {
-                this.ctrlState[updated] |= this.STATE_RISE;
+                this.ctrlState[updated] |= ControlStates.RISE;
             }
         } else {
             //if was down but now is up
             if(!isDown) {
-                this.ctrlState[updated] |= this.STATE_FALL;
+                this.ctrlState[updated] |= ControlStates.FALL;
             }
         }
         //set the isdown state
         if(isDown) {
-            this.ctrlState[updated] |= this.STATE_ISDOWN;
+            this.ctrlState[updated] |= ControlStates.ISDOWN;
         } else {
-            this.ctrlState[updated] &= ~this.STATE_ISDOWN;
+            this.ctrlState[updated] &= ~ControlStates.ISDOWN;
         }
         //console.log("newState: "+this.ctrlState[updated].toString(2));
         return false;
@@ -104,12 +110,12 @@ class ControlsHandler {
             this.outputBuffer[i] = this.ctrlState[i];
         }
         //reset all control states' fall/rise states
-        for(let i = 0;i < this.ctrlList.length; i++) {
-            this.ctrlState[i] &= this.STATE_ISDOWN;
+        for(let i = 0;i < this.ctrlState.length; i++) {
+            this.ctrlState[i] &= ControlStates.ISDOWN;
         }
         //console.log("getNextControl() = " + this.outputBuffer);
         return this.outputBuffer;
     }
 }
 
-export default ControlsHandler;
+export {KeyCodes,Controls,ControlStates,ControlsHandler};

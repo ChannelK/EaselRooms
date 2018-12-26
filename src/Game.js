@@ -1,7 +1,7 @@
 import "createjs";
 import TitleScreen from "./titlescreen/TitleScreen";
 import RoomScreen from "./roomscreen/RoomScreen";
-import ControlsHandler from "./ControlsHandler";
+import {KeyCodes,Controls,ControlStates,ControlsHandler} from "./ControlsHandler";
 
 function runGame() {
     console.log("runGame()");
@@ -13,6 +13,12 @@ function runGame() {
 class GameCore {
     constructor(canvas) {
         this.stage = new createjs.Stage(canvas);
+
+        //set up the control handler
+        this.ctrlHandler = new ControlsHandler();
+        document.onkeydown = ((evt) => {return this.ctrlHandler.handleKey(true,evt);}).bind(this);
+        document.onkeyup = ((evt) => {return this.ctrlHandler.handleKey(false,evt);}).bind(this);
+
         this.currentContext = null;
         //init for titlescreen
         var titleScreen = new TitleScreen(this);
@@ -21,9 +27,6 @@ class GameCore {
             "titlescreen":titleScreen,
             "roomscreen":roomScreen
         };
-        this.controls = new ControlsHandler();
-        document.onkeydown = ((evt) => {return this.controls.handleKey(true,evt);}).bind(this);
-        document.onkeyup = ((evt) => {return this.controls.handleKey(false,evt);}).bind(this);
         //debugging for the key presses
         // document.onkeypress = (evt) => {console.log("PRESS "+evt.keyCode);return false;};
         // document.onkeydown = (evt) => {console.log("DOWN "+evt.keyCode);return false;};
@@ -31,7 +34,7 @@ class GameCore {
     }
 
     getNextControl() {
-        return this.controls.getNextControl();
+        return this.ctrlHandler.getNextControl();
     }
 
     switchContext(contextName,args) {
