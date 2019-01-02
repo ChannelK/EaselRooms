@@ -2,6 +2,8 @@ import "createjs";
 import TitleScreen from "./titlescreen/TitleScreen";
 import RoomScreen from "./roomscreen/RoomScreen";
 import {KeyCodes,Controls,ControlStates,ControlsHandler} from "./ControlsHandler";
+import AssetHandler from "./assetload/AssetHandler";
+import {ASSET_ROOT,getPreloadManifest} from "./assetload/DungeonAssetReader";
 
 function runGame() {
     console.log("runGame()");
@@ -13,6 +15,9 @@ function runGame() {
 class GameCore {
     constructor(canvas) {
         this.stage = new createjs.Stage(canvas);
+        //set up load queue and asset handler for storing usages
+        this.loader = new createjs.LoadQueue(true,ASSET_ROOT);
+        this.assetHandler = new AssetHandler(this.loader);
 
         //set up the control handler
         this.ctrlHandler = new ControlsHandler();
@@ -20,6 +25,7 @@ class GameCore {
         document.onkeyup = ((evt) => {return this.ctrlHandler.handleKey(false,evt);}).bind(this);
 
         this.currentContext = null;
+
         //init for titlescreen
         var titleScreen = new TitleScreen(this);
         var roomScreen = new RoomScreen(this);
@@ -27,10 +33,6 @@ class GameCore {
             "titlescreen":titleScreen,
             "roomscreen":roomScreen
         };
-        //debugging for the key presses
-        // document.onkeypress = (evt) => {console.log("PRESS "+evt.keyCode);return false;};
-        // document.onkeydown = (evt) => {console.log("DOWN "+evt.keyCode);return false;};
-        // document.onkeyup = (evt) => {console.log("UP "+evt.keyCode);return false;};
     }
 
     getNextControl() {
