@@ -1,0 +1,852 @@
+{
+    "big_demon": {
+        "src": "big_demon.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 32,
+            "height": 36,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "big_zombie": {
+        "src": "big_zombie.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 32,
+            "height": 34,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "chest_empty": {
+        "src": "chest_empty.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "open": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "chest_full": {
+        "src": "chest_full.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "open": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "chest_mimic": {
+        "src": "chest_mimic.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "open": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "chort": {
+        "src": "chort.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 24,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "elf_f": {
+        "src": "elf_f.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "elf_m": {
+        "src": "elf_m.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "goblin": {
+        "src": "goblin.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "ice_zombie": {
+        "src": "ice_zombie.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "imp": {
+        "src": "imp.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "knight_f": {
+        "src": "knight_f.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "knight_m": {
+        "src": "knight_m.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "masked_orc": {
+        "src": "masked_orc.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 20,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "muddy": {
+        "src": "muddy.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "necromancer": {
+        "src": "necromancer.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 20,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "ogre": {
+        "src": "ogre.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 32,
+            "height": 32,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "orc_shaman": {
+        "src": "orc_shaman.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 20,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "orc_warrior": {
+        "src": "orc_warrior.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 20,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "skelet": {
+        "src": "skelet.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "swampy": {
+        "src": "swampy.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "tiny_zombie": {
+        "src": "tiny_zombie.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "wizard_f": {
+        "src": "wizard_f.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "wizard_m": {
+        "src": "wizard_m.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 28,
+            "animations": {
+                "hit": [0,0],
+                "idle": [1,4,"idle"],
+                "run": [5,8,"run"]
+            }
+        }
+    },
+    "wogol": {
+        "src": "wogol.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 20,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "zombie": {
+        "src": "zombie.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "idle": [0,3,"idle"],
+                "run": [4,7,"run"]
+            }
+        }
+    },
+    "coin": {
+        "src": "coin.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 8,
+            "height": 8,
+            "animations": {
+                "only": [
+                    0,
+                    3
+                ]
+            }
+        }
+    },
+    "floor_spikes": {
+        "src": "floor_spikes.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "only": [
+                    0,
+                    3
+                ]
+            }
+        }
+    },
+    "wall_fountain_mid_blue": {
+        "src": "wall_fountain_mid_blue.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "only": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "wall_fountain_mid_red": {
+        "src": "wall_fountain_mid_red.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "only": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "wall_fountain_basin_blue": {
+        "src": "wall_fountain_basin_blue.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "only": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "wall_fountain_basin_red": {
+        "src": "wall_fountain_basin_red.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 16,
+            "height": 16,
+            "animations": {
+                "only": [
+                    0,
+                    2
+                ]
+            }
+        }
+    },
+    "floor_2": {
+        "src": "floor_2.png",
+        "isAnim": false
+    },
+    "doors_leaf_closed": {
+        "src": "doors_leaf_closed.png",
+        "isAnim": false
+    },
+    "wall_side_front_left": {
+        "src": "wall_side_front_left.png",
+        "isAnim": false
+    },
+    "wall_hole_1": {
+        "src": "wall_hole_1.png",
+        "isAnim": false
+    },
+    "floor_3": {
+        "src": "floor_3.png",
+        "isAnim": false
+    },
+    "weapon_anime_sword": {
+        "src": "weapon_anime_sword.png",
+        "isAnim": false
+    },
+    "ui_heart_full": {
+        "src": "ui_heart_full.png",
+        "isAnim": false
+    },
+    "wall_side_front_right": {
+        "src": "wall_side_front_right.png",
+        "isAnim": false
+    },
+    "floor_1": {
+        "src": "floor_1.png",
+        "isAnim": false
+    },
+    "wall_hole_2": {
+        "src": "wall_hole_2.png",
+        "isAnim": false
+    },
+    "weapon_knife": {
+        "src": "weapon_knife.png",
+        "isAnim": false
+    },
+    "skull": {
+        "src": "skull.png",
+        "isAnim": false
+    },
+    "wall_goo": {
+        "src": "wall_goo.png",
+        "isAnim": false
+    },
+    "floor_4": {
+        "src": "floor_4.png",
+        "isAnim": false
+    },
+    "crate": {
+        "src": "crate.png",
+        "isAnim": false
+    },
+    "weapon_regular_sword": {
+        "src": "weapon_regular_sword.png",
+        "isAnim": false
+    },
+    "wall_goo_base": {
+        "src": "wall_goo_base.png",
+        "isAnim": false
+    },
+    "floor_5": {
+        "src": "floor_5.png",
+        "isAnim": false
+    },
+    "doors_frame_right": {
+        "src": "doors_frame_right.png",
+        "isAnim": false
+    },
+    "wall_banner_green": {
+        "src": "wall_banner_green.png",
+        "isAnim": false
+    },
+    "wall_coulmn_base": {
+        "src": "wall_coulmn_base.png",
+        "isAnim": false
+    },
+    "flask_yellow": {
+        "src": "flask_yellow.png",
+        "isAnim": false
+    },
+    "wall_top_left": {
+        "src": "wall_top_left.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_t_top_right": {
+        "src": "wall_inner_corner_t_top_right.png",
+        "isAnim": false
+    },
+    "edge": {
+        "src": "edge.png",
+        "isAnim": false
+    },
+    "column_base": {
+        "src": "column_base.png",
+        "isAnim": false
+    },
+    "wall_corner_front_left": {
+        "src": "wall_corner_front_left.png",
+        "isAnim": false
+    },
+    "floor_7": {
+        "src": "floor_7.png",
+        "isAnim": false
+    },
+    "flask_big_blue": {
+        "src": "flask_big_blue.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_mid_left": {
+        "src": "wall_inner_corner_mid_left.png",
+        "isAnim": false
+    },
+    "wall_banner_blue": {
+        "src": "wall_banner_blue.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_mid_right": {
+        "src": "wall_inner_corner_mid_right.png",
+        "isAnim": false
+    },
+    "floor_6": {
+        "src": "floor_6.png",
+        "isAnim": false
+    },
+    "wall_side_top_right": {
+        "src": "wall_side_top_right.png",
+        "isAnim": false
+    },
+    "wall_corner_top_left": {
+        "src": "wall_corner_top_left.png",
+        "isAnim": false
+    },
+    "ui_heart_half": {
+        "src": "ui_heart_half.png",
+        "isAnim": false
+    },
+    "wall_top_mid": {
+        "src": "wall_top_mid.png",
+        "isAnim": false
+    },
+    "wall_mid": {
+        "src": "wall_mid.png",
+        "isAnim": false
+    },
+    "flask_red": {
+        "src": "flask_red.png",
+        "isAnim": false
+    },
+    "weapon_baton_with_spikes": {
+        "src": "weapon_baton_with_spikes.png",
+        "isAnim": false
+    },
+    "weapon_green_magic_staff": {
+        "src": "weapon_green_magic_staff.png",
+        "isAnim": false
+    },
+    "weapon_saw_sword": {
+        "src": "weapon_saw_sword.png",
+        "isAnim": false
+    },
+    "ui_heart_empty": {
+        "src": "ui_heart_empty.png",
+        "isAnim": false
+    },
+    "weapon_knight_sword": {
+        "src": "weapon_knight_sword.png",
+        "isAnim": false
+    },
+    "weapon_red_magic_staff": {
+        "src": "weapon_red_magic_staff.png",
+        "isAnim": false
+    },
+    "hole": {
+        "src": "hole.png",
+        "isAnim": false
+    },
+    "doors_frame_top": {
+        "src": "doors_frame_top.png",
+        "isAnim": false
+    },
+    "flask_blue": {
+        "src": "flask_blue.png",
+        "isAnim": false
+    },
+    "weapon_katana": {
+        "src": "weapon_katana.png",
+        "isAnim": false
+    },
+    "doors_leaf_open": {
+        "src": "doors_leaf_open.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_l_top_right": {
+        "src": "wall_inner_corner_l_top_right.png",
+        "isAnim": false
+    },
+    "weapon_cleaver": {
+        "src": "weapon_cleaver.png",
+        "isAnim": false
+    },
+    "wall_banner_red": {
+        "src": "wall_banner_red.png",
+        "isAnim": false
+    },
+    "flask_big_yellow": {
+        "src": "flask_big_yellow.png",
+        "isAnim": false
+    },
+    "wall_right": {
+        "src": "wall_right.png",
+        "isAnim": false
+    },
+    "wall_banner_yellow": {
+        "src": "wall_banner_yellow.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_l_top_left": {
+        "src": "wall_inner_corner_l_top_left.png",
+        "isAnim": false
+    },
+    "wall_side_top_left": {
+        "src": "wall_side_top_left.png",
+        "isAnim": false
+    },
+    "wall_top_right": {
+        "src": "wall_top_right.png",
+        "isAnim": false
+    },
+    "weapon_big_hammer": {
+        "src": "weapon_big_hammer.png",
+        "isAnim": false
+    },
+    "flask_big_red": {
+        "src": "flask_big_red.png",
+        "isAnim": false
+    },
+    "wall_inner_corner_t_top_left": {
+        "src": "wall_inner_corner_t_top_left.png",
+        "isAnim": false
+    },
+    "floor_ladder": {
+        "src": "floor_ladder.png",
+        "isAnim": false
+    },
+    "weapon_mace": {
+        "src": "weapon_mace.png",
+        "isAnim": false
+    },
+    "flask_big_green": {
+        "src": "flask_big_green.png",
+        "isAnim": false
+    },
+    "flask_green": {
+        "src": "flask_green.png",
+        "isAnim": false
+    },
+    "weapon_lavish_sword": {
+        "src": "weapon_lavish_sword.png",
+        "isAnim": false
+    },
+    "doors_frame_left": {
+        "src": "doors_frame_left.png",
+        "isAnim": false
+    },
+    "column_top": {
+        "src": "column_top.png",
+        "isAnim": false
+    },
+    "wall_column_mid": {
+        "src": "wall_column_mid.png",
+        "isAnim": false
+    },
+    "wall_left": {
+        "src": "wall_left.png",
+        "isAnim": false
+    },
+    "wall_corner_front_right": {
+        "src": "wall_corner_front_right.png",
+        "isAnim": false
+    },
+    "wall_corner_left": {
+        "src": "wall_corner_left.png",
+        "isAnim": false
+    },
+    "wall_corner_top_right": {
+        "src": "wall_corner_top_right.png",
+        "isAnim": false
+    },
+    "weapon_duel_sword": {
+        "src": "weapon_duel_sword.png",
+        "isAnim": false
+    },
+    "wall_corner_right": {
+        "src": "wall_corner_right.png",
+        "isAnim": false
+    },
+    "floor_8": {
+        "src": "floor_8.png",
+        "isAnim": false
+    },
+    "weapon_machete": {
+        "src": "weapon_machete.png",
+        "isAnim": false
+    },
+    "wall_fountain_top": {
+        "src": "wall_fountain_top.png",
+        "isAnim": false
+    },
+    "doors_all": {
+        "src": "doors_all.png",
+        "isAnim": false
+    },
+    "wall_corner_bottom_right": {
+        "src": "wall_corner_bottom_right.png",
+        "isAnim": false
+    },
+    "wall_column_top": {
+        "src": "wall_column_top.png",
+        "isAnim": false
+    },
+    "column_mid": {
+        "src": "column_mid.png",
+        "isAnim": false
+    },
+    "wall_corner_bottom_left": {
+        "src": "wall_corner_bottom_left.png",
+        "isAnim": false
+    },
+    "wall_side_mid_left": {
+        "src": "wall_side_mid_left.png",
+        "isAnim": false
+    },
+    "weapon_hammer": {
+        "src": "weapon_hammer.png",
+        "isAnim": false
+    },
+    "wall_side_mid_right": {
+        "src": "wall_side_mid_right.png",
+        "isAnim": false
+    },
+    "weapon_axe": {
+        "src": "weapon_axe.png",
+        "isAnim": false
+    },
+    "weapon_rusty_sword": {
+        "src": "weapon_rusty_sword.png",
+        "isAnim": false
+    },
+    "weapon_red_gem_sword": {
+        "src": "weapon_red_gem_sword.png",
+        "isAnim": false
+    },
+    "weapon_golden_sword": {
+        "src": "weapon_golden_sword.png",
+        "isAnim": false
+    },
+    "grant": {
+        "src": "spritesheet_grant.png",
+        "isAnim": [
+            true
+        ],
+        "data": {
+            "width": 165,
+            "height": 292,
+            "animations": {
+                "run": [0, 25, "run", 1.5],
+                "jump": [26, 63, "run"]
+            }
+        }
+    }
+}
