@@ -20,6 +20,9 @@ coverage
 # nyc test coverage
 .nyc_output
 
+#all DS_STORE files generated on mac 
+**/.DS_STORE
+
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
