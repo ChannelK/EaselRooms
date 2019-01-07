@@ -1,6 +1,7 @@
 import "createjs";
 import GameContext from "../GameContext";
 import {KeyCodes,Controls,ControlStates,ControlsHandler} from "../ControlsHandler";
+import OverworldCharacter from "../OverworldCharacter";
 
 class RoomScreen extends GameContext {
     constructor(controller) {
@@ -28,11 +29,11 @@ class RoomScreen extends GameContext {
         this.rightText.visible = false;
 
         this.testSprite_0 = null;
-        this.testSprite_1 = null;
+        this.playerCharacter = null;
 
         this.sky = null;
 
-        this.ctrlCombos = [
+        this.ctrlDebugPairs = [
             [Controls.UP,this.upText],
             [Controls.DOWN,this.downText],
             [Controls.LEFT,this.leftText],
@@ -72,12 +73,13 @@ class RoomScreen extends GameContext {
         
         this.testSprite_0 = new createjs.Sprite(debugSpriteSheet,"run");
         //this.testSprite_1 = new createjs.Sprite(manualSpriteSheet,"run");
-        this.testSprite_1 = new createjs.Sprite(this.gameCore.assetHandler.getSpriteSheet("ice_zombie"),0);
-        
+        let playerSprite = new createjs.Sprite(this.gameCore.assetHandler.getSpriteSheet("elf_f"),"idle");
+        this.playerCharacter = new OverworldCharacter(playerSprite);
+        this.playerCharacter.animIdle();
         this.testSprite_0.x = 120;
         this.testSprite_0.y = 120;
-        this.testSprite_1.x = 120;
-        this.testSprite_1.y = 100;
+        this.playerCharacter.moveTo(120,50);
+        this.playerCharacter.scaleTo(3.0,3.0);
         console.log("Test Sprite:");
         console.log(this.testSprite_0);
 
@@ -90,14 +92,37 @@ class RoomScreen extends GameContext {
 
     handleTick(event) {
         let ctrlState = this.gameCore.getNextControl();
-        for(let i = 0; i < this.ctrlCombos.length;i++) {
-            let ctrl = this.ctrlCombos[i][0];
-            let textObj = this.ctrlCombos[i][1];
+        //show or hide key press announcements
+        for(let i = 0; i < this.ctrlDebugPairs.length;i++) {
+            let ctrl = this.ctrlDebugPairs[i][0];
+            let textObj = this.ctrlDebugPairs[i][1];
             if(ctrlState[ctrl] & (ControlStates.ISDOWN | ControlStates.RISE)) {
                 textObj.visible = true;
             } else {
                 textObj.visible = false;
             }
+        }
+        let moveVector = [0,0];
+        //move the character
+        ////horizontal
+        if(ctrlState[Controls.LEFT] > 0) {
+            moveVector[0] = -1;
+        } else if(ctrlState[Controls.RIGHT] > 0) {
+            moveVector[0] = 1;
+        }
+        ////vertical
+        if(ctrlState[Controls.UP] > 0) {
+            moveVector[1] = -1;
+        } else if(ctrlState[Controls.DOWN] > 0) {
+            moveVector[1] = 1;
+        }
+        //vectorize speed
+        if(moveVector[0] != 0 && moveVector[1] != 0) {
+            this.playerCharacter.moveBy(moveVector[0]*this.playerCharacter.diagSpeed,
+                moveVector[1]*this.playerCharacter.diagSpeed);
+        } else {
+            this.playerCharacter.moveBy(moveVector[0]*this.playerCharacter.moveSpeed,
+                moveVector[1]*this.playerCharacter.moveSpeed);
         }
         this.stage.update(event);
     }
@@ -116,8 +141,7 @@ class RoomScreen extends GameContext {
         this.stage.addChild(this.rightText);
         this.stage.addChild(this.testSprite_0);
         this.testSprite_0.play();
-        this.stage.addChild(this.testSprite_1);
-        this.testSprite_1.play();
+        this.stage.addChild(this.playerCharacter.spriteObj);
         //debugging
         //this.stage.addChild(this.sky);
         //this.testSprite.play();
