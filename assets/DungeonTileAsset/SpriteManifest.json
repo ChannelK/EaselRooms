@@ -99,8 +99,8 @@
             "height": 28,
             "animations": {
                 "hit": [0,0],
-                "idle": [1,4,"idle"],
-                "run": [5,8,"run"]
+                "idle": [1,4,"idle",0.5],
+                "run": [5,8,"run",0.5]
             }
         }
     },
