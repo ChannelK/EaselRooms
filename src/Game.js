@@ -14,7 +14,7 @@ function runGame() {
 
 class GameCore {
     constructor(canvas) {
-        this.stage = new createjs.Stage(canvas);
+        this.stage = new createjs.StageGL(canvas);
         //set up load queue and asset handler for storing usages
         this.loader = new createjs.LoadQueue(true,ASSET_ROOT);
         this.assetHandler = new AssetHandler(this.loader);

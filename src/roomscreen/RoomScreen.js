@@ -7,26 +7,28 @@ class RoomScreen extends GameContext {
     constructor(controller) {
         super(controller);
         console.log("RoomScreen(controller)");
+
+        this.bg = new createjs.Shape();
+        this.bg.graphics.beginFill("#000000").drawRect(0,0,this.stage.canvas.width,this.stage.canvas.height);
+        this.bg.cache(0,0,this.stage.canvas.width,this.stage.canvas.height);
+        
+
         let textColor = "#A0A0A0"
         this.upText = new createjs.Text("UP", "10px Arial", textColor);
-        this.upText.x = 10
-        this.upText.y = 40
-        this.upText.visible = false;
-
+        let tmpBound = this.upText.getBounds();
+        this.upText.cache(tmpBound.x,tmpBound.y,tmpBound.width,tmpBound.height);
+    
         this.downText = new createjs.Text("DOWN", "10px Arial", textColor);
-        this.downText.x = 10
-        this.downText.y = 55
-        this.downText.visible = false;
+        tmpBound = this.downText.getBounds();
+        this.downText.cache(tmpBound.x,tmpBound.y,tmpBound.width,tmpBound.height);
 
         this.leftText = new createjs.Text("LEFT", "10px Arial", textColor);
-        this.leftText.x = 10
-        this.leftText.y = 70
-        this.leftText.visible = false;
+        tmpBound = this.leftText.getBounds();
+        this.leftText.cache(tmpBound.x,tmpBound.y,tmpBound.width,tmpBound.height);
 
         this.rightText = new createjs.Text("RIGHT", "10px Arial", textColor);
-        this.rightText.x = 10
-        this.rightText.y = 85
-        this.rightText.visible = false;
+        tmpBound = this.rightText.getBounds();
+        this.rightText.cache(tmpBound.x,tmpBound.y,tmpBound.width,tmpBound.height);
 
         this.testSprite_0 = null;
         this.playerCharacter = null;
@@ -132,13 +134,29 @@ class RoomScreen extends GameContext {
 
         console.log("RoomScreen.setup()");
         this.stage.clear();
-        var bg = new createjs.Shape();
-        bg.graphics.beginFill("#000000").drawRect(0,0,this.stage.canvas.width,this.stage.canvas.height);
-        this.stage.addChild(bg);
+        
+        this.stage.addChild(this.bg);
+
         this.stage.addChild(this.upText);
+        this.upText.x = 10
+        this.upText.y = 40
+        this.upText.visible = false;
+
         this.stage.addChild(this.downText);
+        this.downText.x = 10
+        this.downText.y = 55
+        this.downText.visible = false;
+
         this.stage.addChild(this.leftText);
+        this.leftText.x = 10
+        this.leftText.y = 70
+        this.leftText.visible = false;
+
         this.stage.addChild(this.rightText);
+        this.rightText.x = 10
+        this.rightText.y = 85
+        this.rightText.visible = false;
+
         this.stage.addChild(this.testSprite_0);
         this.testSprite_0.play();
         this.stage.addChild(this.playerCharacter.spriteObj);
