@@ -81,7 +81,7 @@ class RoomScreen extends GameContext {
         this.testSprite_0.x = 120;
         this.testSprite_0.y = 120;
         this.playerCharacter.moveTo(120,50);
-        this.playerCharacter.scaleTo(3.0,3.0);
+        this.playerCharacter.scaleTo(2.0,2.0);
         console.log("Test Sprite:");
         console.log(this.testSprite_0);
 

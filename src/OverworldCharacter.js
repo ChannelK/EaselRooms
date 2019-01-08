@@ -11,8 +11,8 @@ class OverworldCharacter {
         this.wasRight = true;
         this.moveSpeed = 8;
         this.diagSpeed = Math.SQRT1_2 * this.moveSpeed;
-        this.posX = 0;
-        this.posY = 0;
+        this.posX = 0.0;
+        this.posY = 0.0;
         //used to resume animations, or to update anim after property change
         this.currentAnim = null;
     }
@@ -59,8 +59,8 @@ class OverworldCharacter {
     }
 
     _reloadPos() {
-        this.spriteObj.x = Math.round(this.posX);
-        this.spriteObj.y = Math.round(this.posY);
+        this.spriteObj.x = this.posX;
+        this.spriteObj.y = this.posY;
     }
 }
 
